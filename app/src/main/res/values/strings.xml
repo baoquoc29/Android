@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TestAplication</string>
+    <string name="btnBack">Back</string>
+    <string name="btnSignUp">SignUp</string>
+    <string name="hintEmail">Enter your gmail here</string>
+    <string name="settingsLogin">Login</string>
+    <string name="signupsettings">SignUp</string>
+    <string name="nameTagHeading">Đăng Nhập Hệ Thống</string>
+    <string name="username">UserName:</string>
+    <string name="edtUserName">Enter your username</string>
+    <string name="no_account">You don\'t have account?</string>
+    <string name="login">Login</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="password">PassWord:</string>
+    <string name="text_main">Những Nhân Vật Chính Nổi Tiếng</string>
+    <string name="aot_name">Attack On Titan</string>
+    <string name="description">Mo Ta Attack On TiTan nha</string>
+    <string name="naruto">Naruto</string>
+    <string name="top_5_in_manga_list">Top 5 In Manga List</string>
+</resources>
