@@ -13,11 +13,16 @@
         android:theme="@style/Theme.TestAplication"
         tools:targetApi="31">
         <activity
+            android:name=".History"
+            android:exported="false" />
+        <activity
+            android:name=".ListFavorite"
+            android:exported="false" />
+        <activity
             android:name=".Settings"
             android:exported="false" />
         <activity
             android:name=".FragmentList"
-
             android:exported="false" />
         <activity
             android:name=".MainActivity"

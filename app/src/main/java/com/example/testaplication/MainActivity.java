@@ -2,6 +2,7 @@ package com.example.testaplication;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -55,6 +56,19 @@ public class MainActivity extends AppCompatActivity {
                return  true;
             }
         });
+
     }
 
+    @Override
+    public  void onBackPressed() {
+        if(backpress + 2000 > System.currentTimeMillis()){
+            super.onBackPressed();
+            return;
+        }
+        else{
+            Toast.makeText(MainActivity.this, "CLick Again To Exit App", Toast.LENGTH_SHORT).show();
+        }
+        backpress = System.currentTimeMillis();
+    }
+    private  long backpress;
 }

@@ -11,11 +11,14 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="#4D4B4E"
+        app:titleTextColor="@color/white"
         app:layout_scrollFlags="scroll|enterAlways"
         app:title="Top Anime In All Time" />
     <ListView
         android:layout_width="match_parent"
         android:id="@+id/ListViewItem"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        ></ListView>
+
 </LinearLayout>

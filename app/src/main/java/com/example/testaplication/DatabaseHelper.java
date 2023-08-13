@@ -1,5 +1,6 @@
 package com.example.testaplication;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -38,17 +39,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public void Insert_Data(String name, String top) {
         SQLiteDatabase db = this.getWritableDatabase();
-        String insertQuery = "INSERT INTO " + TABLE_LIST +
-                "(" + NAME_ANIME + "," + TOP_ANIME + ")" +
-                " VALUES('" + name + "','" + top + "')";
-        db.execSQL(insertQuery);
+        ContentValues values = new ContentValues();
+        values.put(NAME_ANIME, name);
+        values.put(TOP_ANIME, top);
+
+        db.insert(TABLE_LIST, null, values);
         db.close();
     }
     public Cursor get_data_list(String sql){
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery(sql,null);
     }
-
-
 
 }

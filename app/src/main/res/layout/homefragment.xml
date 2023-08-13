@@ -59,12 +59,13 @@
             android:layout_height="56dp"
             android:src="@drawable/aa"
             app:civ_border_width="2dp"
-
+            android:id="@+id/anya"
             app:civ_border_color="#FF000000"/>
         <de.hdodenhof.circleimageview.CircleImageView
 
             android:layout_width="56dp"
             android:layout_height="56dp"
+            android:id="@+id/asta"
             android:src="@drawable/asta"
             app:civ_border_width="2dp"
 
@@ -75,7 +76,7 @@
             android:layout_height="56dp"
             android:src="@drawable/na"
             app:civ_border_width="2dp"
-
+            android:id="@+id/naruto"
             app:civ_border_color="#FF000000"/>
         <de.hdodenhof.circleimageview.CircleImageView
 
@@ -83,7 +84,7 @@
             android:layout_height="56dp"
             android:src="@drawable/lu"
             app:civ_border_width="2dp"
-
+            android:id="@+id/levi"
             app:civ_border_color="#FF000000"/>
         <de.hdodenhof.circleimageview.CircleImageView
 
@@ -91,7 +92,7 @@
             android:layout_height="56dp"
             android:src="@drawable/eren"
             app:civ_border_width="2dp"
-
+            android:id="@+id/eren"
             app:civ_border_color="#FF000000"/>
         <de.hdodenhof.circleimageview.CircleImageView
 
@@ -99,7 +100,7 @@
             android:layout_height="56dp"
             android:src="@drawable/kmy"
             app:civ_border_width="2dp"
-
+            android:id="@+id/Tanjiro"
             app:civ_border_color="#FF000000"/>
 
     </LinearLayout>

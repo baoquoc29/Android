@@ -29,6 +29,25 @@ public class Settings extends Fragment {
         btnSettings = view.findViewById(R.id.btnSettings);
         btnHistory = view.findViewById(R.id.btnhistory_view);
         btnFavorite = view.findViewById(R.id.btnfavorite);
+        btnSupport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Mọi yêu cầu hỗ trợ xin gửi về gmail quocta.gov@gmail.com", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Chức năng đang được hoàn thiện", Toast.LENGTH_SHORT).show();
+            }
+        });
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), History.class);
+                startActivity(intent);
+            }
+        });
         btnContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +68,13 @@ public class Settings extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SignUp.class);
+                startActivity(intent);
+            }
+        });
+        btnFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ListFavorite.class);
                 startActivity(intent);
             }
         });
