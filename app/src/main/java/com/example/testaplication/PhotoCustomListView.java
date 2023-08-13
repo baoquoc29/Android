@@ -68,14 +68,15 @@ public class PhotoCustomListView extends BaseAdapter implements Filterable {
                     else{
                         List<CustomPhoto> list2 = new ArrayList<>();
                         for(CustomPhoto custom : listori){
-                            if(searching_name.contains(custom.getNameAuthors().toLowerCase())){
+                            if(custom.getNameAuthors().toLowerCase().contains(searching_name)){
                                 list2.add(custom);
                             }
                         }
                         list = list2;
+
                     }
-                    FilterResults filterResults = new FilterResults();
-                    filterResults.values = list;
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = list;
                     return filterResults;
             }
 
