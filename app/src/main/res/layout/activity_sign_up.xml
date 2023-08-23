@@ -16,50 +16,48 @@
         app:civ_border_width="2dp"
 
         app:civ_border_color="#FF000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <TextView
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:text="@string/username"
             android:textColor="@color/white"
-            tools:ignore="TextSizeCheck"></TextView>
+            android:text="Email: ">
+        </TextView>
 
         <EditText
-            android:id="@+id/edtUsername"
+            android:id="@+id/edtGmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
+            android:hint="Enter gmail"
             android:textColorHint="@color/white"
-            android:hint="Nhập Tên Tài Khoản"
-
-            android:textSize="20dp"
-          ></EditText>
+            tools:ignore="TouchTargetSizeCheck"></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password: "
             android:textColor="@color/white"
-            tools:ignore="TextSizeCheck"></TextView>
+            android:text="Password: "></TextView>
 
         <EditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:textColorHint="@color/white"
-            android:hint="Nhập Mật Khẩu"
-            android:textSize="20dp"
-            android:inputType="numberPassword"
+            android:layout_height="wrap_content"
+            tools:ignore="TouchTargetSizeCheck"
+            android:hint="Enter password"
+            android:inputType="textPassword"
            ></EditText>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -75,33 +73,13 @@
             android:layout_width="match_parent"
             android:textColorHint="@color/white"
             android:layout_height="wrap_content"
-            android:hint="Nhập Lại Mật Khẩu"
-            android:textSize="20dp"
-            android:inputType="numberPassword"
-           ></EditText>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="Gmail: ">
-        </TextView>
-
-        <EditText
-            android:id="@+id/edtGmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:hint="Nhập Email"
-            android:textColorHint="@color/white"
+            tools:ignore="TouchTargetSizeCheck"
+            android:hint="Enter password again"
+            android:inputType="textPassword"
             ></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content">
     <CheckBox
         android:layout_width="wrap_content"
@@ -130,10 +108,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnBack"
-            android:text="Hiện Thị Tải Khoản"
-            android:textColorHint="@color/white"
+            android:id="@+id/btnLogin"
             android:textColor="@color/white"
+            android:text="Login"
             style="?android:attr/buttonBarButtonStyle"
             >
         </Button>
@@ -141,13 +118,6 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:ignore="ExtraText">
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/list_item"
-        >
-    </ListView>
-</LinearLayout>
+    tools:ignore="ExtraText"/>
 
 </LinearLayout>

@@ -17,4 +17,6 @@
     <string name="description">Mo Ta Attack On TiTan nha</string>
     <string name="naruto">Naruto</string>
     <string name="top_5_in_manga_list">Top 5 In Manga List</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

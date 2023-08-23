@@ -10,34 +10,41 @@
     <LinearLayout
         android:layout_width="match_parent"
 
-        android:layout_height="wrap_content">
+        android:layout_height="100dp">
 
-        <ImageView
-            android:layout_width="72dp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="106dp"
+            android:layout_height="96dp"
+            android:src="@drawable/na"
+            app:civ_border_width="2dp"
 
-            android:layout_height="match_parent"
-            android:src="@drawable/personw"></ImageView>
-        <Button
-            android:textColor="@color/white"
+            app:civ_border_color="#FF000000"/>
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/settingsLogin"
-            android:id="@+id/LoginFr"
-            android:textSize="25dp"
-            style="?android:attr/buttonBarButtonStyle"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:textColor="@color/white"
-            android:layout_height="wrap_content"
-            android:text="/"></TextView>
-        <Button
-            android:textColor="@color/white"
-            android:textSize="25dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/SignUpFr"
-            android:text="@string/signupsettings"
-            style="?android:attr/buttonBarButtonStyle"></Button>
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textUsername"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="UserName:"
+                android:textSize="16dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textGmail"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:text="Gmail:"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
 
     </LinearLayout>
     <LinearLayout
@@ -123,31 +130,6 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/settingsw">
-
-        </ImageView>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:text="Cài Đặt"
-
-            android:textColor="@color/white"
-            style="?android:attr/buttonBarButtonStyle"
-            android:textSize="16dp"
-            android:id="@+id/btnSettings"
-            >
-
-        </Button>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:padding="10dp"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textSize="16dp"
             android:layout_marginTop="15dp"
             android:src="@drawable/sp">
@@ -190,22 +172,55 @@
 
         </Button>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="10dp"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/chang3">
+
+        </ImageView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Đổi Mật Khẩu"
+            android:textColor="@color/white"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="16dp"
+            android:id="@+id/ChangePass"
+            >
+
+        </Button>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/settingsw">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="550dp"
-        android:text="Team Dev UTT v.1.0.0"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        tools:ignore="TextSizeCheck">
+        </ImageView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Đăng Xuất"
 
-    </TextView>
+            android:textColor="@color/white"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="16dp"
+            android:id="@+id/btnSignOut"
+            >
 
+        </Button>
+    </LinearLayout>
 </LinearLayout>

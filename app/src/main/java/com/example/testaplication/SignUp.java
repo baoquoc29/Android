@@ -1,18 +1,27 @@
 package com.example.testaplication;
 
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
+
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,57 +30,80 @@ public class SignUp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-        MyDataBase db = new MyDataBase(this,MyDataBase.DATA_NAME,null,1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         mapping();
-
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = textUsername.getText().toString();
-                String pass = textPassword.getText().toString();
-                String gmail = textGmail.getText().toString();
-                String repass = textRePassword.getText().toString();
-                 if(checkBox.isChecked() && pass.equals(repass)){
-                    db.Insert_Data(user,pass,gmail);
-                    Toast.makeText(SignUp.this, "Thanh Cong", Toast.LENGTH_SHORT).show();
+                String pass = textPassword.getText().toString().trim();
+                String repass = textRePassword.getText().toString().trim();
+                if(!pass.equals(repass)){
+                    Toast.makeText(SignUp.this, "Mật Khẩu Không Trùng Khớp Vui Lòng Nhập Lại", Toast.LENGTH_SHORT).show();
+                }
+                else if(!checkBox.isChecked()){
+                    Toast.makeText(SignUp.this, "Vui Lòng Xác Nhận Đã Đủ 18 Tuoi", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(SignUp.this, "Please Confirm CheckBox or Confirm Password ", Toast.LENGTH_SHORT).show();
+                    clickSignUp();
                 }
-
-
             }
         });
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor data = db.get_data("Select * from Account");
-                while(data.moveToNext()){
-                    String username = data.getString(0);
-                    String password = data.getString(1);
-                    String gmailne = data.getString(2);
-                    list.add(new Account(username,"Đây Là Thông Tin Bảo Mật"));
-                    adapter = new ArrayAdapter(SignUp.this,android.R.layout.simple_expandable_list_item_1,list);
-                    listView.setAdapter(adapter);
-                }
+                Intent intent = new Intent(SignUp.this,Login.class);
+                startActivity(intent);
+                finishActivity(1);
             }
         });
-
     }
     public void mapping(){
             btnSignUp = findViewById(R.id.btnSignUpx);
-            textUsername = findViewById(R.id.edtUsername);
             textPassword = findViewById(R.id.edtPassword);
-            textRePassword = findViewById(R.id.edtRePassword);
             textGmail = findViewById(R.id.edtGmail);
-            btnBack = findViewById(R.id.btnBack);
             checkBox = findViewById(R.id.checkboxconfirm);
-            listView = findViewById(R.id.list_item);
+            textRePassword = findViewById(R.id.edtRePassword);
+            btnBack = findViewById(R.id.btnLogin);
     }
+    private void clickSignUp(){
+        String password = textPassword.getText().toString().trim();
+        String email = textGmail.getText().toString().trim();
+       FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(SignUp.this, "Sign Up Success", Toast.LENGTH_SHORT).show();
+                            AlertDialog.Builder builder = new AlertDialog.Builder(SignUp.this);
+                            builder.setTitle("Bạn Có Muốn Trở Về Đăng Nhập");
+                            builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+                                }
+                            });
+                            builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Intent intent = new Intent(SignUp.this,Login.class);
+                                    startActivity(intent);
+                                    finishActivity(1);
+                                }
+                            });
+                            builder.show();
+                        } else {
+                            Toast.makeText(SignUp.this, "Tài Khoản Đã Tồn Tại Trong Hệ Thống", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+    }
+
+
+
     private CheckBox checkBox;
     private Button btnSignUp;
     private TextView textUsername;
@@ -82,4 +114,5 @@ public class SignUp extends AppCompatActivity {
     private Button btnBack;
     private ListView listView;
     private  List<Account> list  = new ArrayList<>();
+
 }

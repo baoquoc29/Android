@@ -43,7 +43,7 @@
             android:id="@+id/textUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:textColor="@color/white"
             android:autofillHints=""
             android:hint="@string/edtUserName"
             android:paddingStart="20dp"
@@ -71,8 +71,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_password"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             android:paddingStart="20dp"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             tools:ignore="RtlSymmetry,TouchTargetSizeCheck,VisualLintTextFieldSize"
             android:autofillHints="">
@@ -87,13 +88,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnLogin"
-            android:text="@string/login"
+            android:text="Đăng Nhập"
             android:textColor="@color/white"
             style="?android:attr/buttonBarButtonStyle"
             >
         </Button>
     </LinearLayout>
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/forgotPass"
+            style="?android:attr/buttonBarButtonStyle"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Quên Mật Khẩu?">
+
+        </Button>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -102,7 +119,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:paddingStart="50dp"
-            android:text="@string/no_account"
+            android:text="Bạn Chưa Có Tài Khoản?"
             android:textSize="15sp"
             tools:ignore="RtlSymmetry,TextSizeCheck">
 
@@ -113,7 +130,7 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_height="wrap_content"
             android:id="@+id/btnSignUpx"
-            android:text="@string/btnSignUp"
+            android:text="Đăng Ký"
             >
 
         </Button>

@@ -251,7 +251,6 @@ public class FragmentList extends Fragment {
     private List<CustomPhoto> list = new ArrayList<>();
     private ListView listViewItem;
     private  PhotoCustomListView adapter;
-    private DatabaseHelper databaseHelper ;
     private Button btnadd;
     private SearchView searchView;
     public static  List<CustomPhoto> list_Favorite = new ArrayList<>();

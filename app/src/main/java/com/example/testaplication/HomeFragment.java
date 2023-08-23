@@ -61,47 +61,24 @@ public class HomeFragment extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String url;
                 if(i==0){
-                    url = "https://danet.vn/dai-chien-nguoi-khong-lo-1556852718.html";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    startActivity(intent);
                     list_history.add(listCustom.get(0));
+                    Intent intent = new Intent(getActivity(),BlackClover.class);
+                    startActivity(intent);
                 }
                 if(i==1){
-                    url = "https://animevietsub.moe/phim/fruits-basket-2019-a3446/";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    startActivity(intent);
                     list_history.add(listCustom.get(1));
                 }
                 if(i==2){
-                    url = "https://vieon.vn/spy-x-family-gia-dinh-diep-vien.html";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    startActivity(intent);
                     list_history.add(listCustom.get(2));
                 }
                 if(i==3){
-                    url = "https://animevietsub.moe/phim/the-gioi-phep-thuat-a474/";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    startActivity(intent);
                     list_history.add(listCustom.get(3));
                 }
                 if(i==4){
-                    url = "https://pops.vn/series/naruto-5fc5f17fca8af00034b846ae";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    startActivity(intent);
                     list_history.add(listCustom.get(4));
                 }
                 if(i==5){
-                    url = "https://www.iq.com/album/one-piece-dao-hai-tac-1999-1bk9icvr331?lang=vi_vn";
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(url));
-                    startActivity(intent);
                     list_history.add(listCustom.get(5));
                 }
             }
